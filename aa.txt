@@ -1,5 +1,0 @@
-java -jar 1.jar -role node -nodeConfig node.json
-java -jar 1.jar -role node -nodeConfig node_1.json
-
-adb connect 10.73.227.177:30016
-http://huaweicdnstandby.gd.chinamobile.com/11111112/16/20190422/269282492/269282492.ts?icpid=&accounttype=1&limitflux=-1&limitdur=-1&accountinfo=:20190425102734,hw0707,10.73.232.42,20190425102734,02000024000000012018100899345316,977F2B20D9E2BB6713DEF9F4B8655D5A,0,1,0,10000100000000090000000000001042,,1,11010000001,43,,1,END
