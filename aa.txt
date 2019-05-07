@@ -1,5 +1,3 @@
-*************************************************************************************************************************************************
-java -jar 1.jar -role hub -hubConfig hub.json
 java -jar 1.jar -role node -nodeConfig node.json
 java -jar 1.jar -role node -nodeConfig node_1.json
 
