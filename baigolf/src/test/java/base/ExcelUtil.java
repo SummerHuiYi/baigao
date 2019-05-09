@@ -20,7 +20,7 @@ public class ExcelUtil {
 		Object[][] o=null;
 		try {
 			//获取工作文件
-			Workbook workbook=WorkbookFactory.create(new File("C:\\Users\\admin\\Desktop\\自动化测试用例_百高.xlsx"));
+			Workbook workbook=WorkbookFactory.create(new File("C:\\Users\\admin\\Desktop\\baigai.xlsx"));
 			//获取文件的工作表
 			Sheet sheet=workbook.getSheet(sheetName);
 			//记录行数
