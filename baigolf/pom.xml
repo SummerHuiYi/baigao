@@ -78,7 +78,20 @@
  					</suiteXmlFiles>
  				</configuration>
  			</plugin>
+ 			<!-- 配置web.xml文件的配置 -->
+	    <!--  <plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-war-plugin</artifactId>
+	            <version>2.2</version>
+	            <configuration>
+	                指定web.xml的路径 
+					<webXml>WebRoot\WEB-INF\web.xml</webXml>
+					指定jsp、js、css的路劲 
+					<warSourceDirectory>WebRoot</warSourceDirectory>
+	            </configuration>
+	        </plugin> -->
  		</plugins>
+ 		
  		<resources>
  			<resource>
  				<directory>src/test/java</directory>
