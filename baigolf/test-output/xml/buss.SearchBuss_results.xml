@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test_search"
+           tests="4"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="178.704">
+  <properties />
+  
+  
+            <testcase name="search" time="57.754" classname="buss.SearchBuss" />
+                <testcase name="search" time="55.705" classname="buss.SearchBuss" />
+                <testcase name="search" time="35.493" classname="buss.SearchBuss" />
+                <testcase name="search" time="29.752" classname="buss.SearchBuss" />
+      
+</testsuite>
