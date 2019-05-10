@@ -14,7 +14,7 @@
 		</classes>
 	</test>   -->
 	
-	<test name="test_search">
+	<!-- <test name="test_search">
 		<parameter name="browser" value="firefox"></parameter>
 		<parameter name="version" value="66.0.3 (64 位)"></parameter>
 		<classes>
@@ -22,7 +22,7 @@
 			<class name="page.SearchPage"></class>
 			<class name="buss.SearchBuss"></class>
 		</classes>
-	</test>
+	</test> -->
 	<listeners>
         <listener class-name="org.uncommons.reportng.HTMLReporter" />
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
