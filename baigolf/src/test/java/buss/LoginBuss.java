@@ -15,7 +15,6 @@ import base.DriverBase;
 import base.ExcelUtil;
 import base.ImagesFile;
 import base.Log;
-import handle.LoginPageHandle;
 import page.LoginPage;
 
 public class LoginBuss extends DriverBase{
@@ -33,18 +32,18 @@ public class LoginBuss extends DriverBase{
 		if(map.get("用户名")!=null) user=map.get("用户名");
 		if(map.get("密码")!=(null)) paw=map.get("密码");
 		driver.get(webUrl);
-		LoginPageHandle loginPageHandle=new LoginPageHandle(driver,PageFactory.initElements(driver, LoginPage.class));
-		loginPageHandle.zhanghao();
-		loginPageHandle.denglu();
-		loginPageHandle.user(user);
-		loginPageHandle.password(paw);
-		loginPageHandle.blue_btn();
+		LoginPage loginPage=new LoginPage(driver);
+		loginPage.zhanghao();
+		loginPage.denglu();
+		loginPage.user(user);
+		loginPage.password(paw);
+		loginPage.blue_btn();
 		//判断登录成功
-		if(loginPageHandle.user_account()&&user.equals(loginPageHandle.getUser_account().getText())) {
+		if(loginPage.user_account()&&user.equals(loginPage.getUser_account().getText())) {
 			Log.info("类："+LoginBuss.class.getName()+"；功能：百高-登录；信息：第"+caseID+"用例，登录成功");
 			assertEquals(true, true);
 		}else {
-			if(loginPageHandle.getPrompt_text().getText().equals(expectedResult)) {
+			if(loginPage.getPrompt_text().getText().equals(expectedResult)) {
 				Log.info("类："+LoginBuss.class.getName()+"；功能：百高-登录；信息：第"+caseID+"用例，验证登录失败-成功");
 				assertEquals(true, true);
 			}

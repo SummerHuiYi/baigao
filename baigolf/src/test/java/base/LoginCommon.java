@@ -13,14 +13,14 @@ public class LoginCommon {
 	
 	public boolean login(String webUrl,String user,String paw,String expectedResult,WebDriver driver) {
 		driver.get(webUrl);
-		LoginPageHandle loginPageHandle=new LoginPageHandle(driver,PageFactory.initElements(driver, LoginPage.class));
-		loginPageHandle.zhanghao();
-		loginPageHandle.denglu();
-		loginPageHandle.user(user);
-		loginPageHandle.password(paw);
-		loginPageHandle.blue_btn();
+		LoginPage loginPage=new LoginPage(driver);
+		loginPage.zhanghao();
+		loginPage.denglu();
+		loginPage.user(user);
+		loginPage.password(paw);
+		loginPage.blue_btn();
 		//判断登录成功
-		if(loginPageHandle.user_account()&&user.equals(loginPageHandle.getUser_account().getText())) return true;
+		if(loginPage.user_account()&&user.equals(loginPage.getUser_account().getText())) return true;
 		else return false;
 	}	
 }

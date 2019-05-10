@@ -16,7 +16,7 @@ public class BasePage {
 	public BasePage() {}
 	public BasePage(WebDriver driver) {
 		this.driver=driver;
-		PageFactory.initElements(new AjaxElementLocatorFactory(driver, timeOut) , this);
+		PageFactory.initElements(driver , this);
 	}
 
 	public void sendkeys(WebElement element,String value,String className,String functionName,String inputBox) {

@@ -23,7 +23,6 @@ import base.ExcelUtil;
 import base.ImagesFile;
 import base.Log;
 import base.LoginCommon;
-import handle.SearchPageHandle;
 import page.SearchPage;
 
 public class SearchBuss extends DriverBase{
@@ -52,9 +51,9 @@ public class SearchBuss extends DriverBase{
 			Log.info("类："+SearchBuss.class.getName()+"；功能：高尔夫球场-搜索；信息：第"+caseID+"用例，登录成功");
 			assertEquals(true, true);
 		}
-		SearchPageHandle searchPageHandle=new SearchPageHandle(driver, PageFactory.initElements(driver,SearchPage.class));
+		SearchPage searchPage=new SearchPage(driver);
 ;		//搜索地区或高尔夫球场
-		searchPageHandle.course_search(courseSearch);
+		searchPage.course_search(courseSearch);
 		//日期
 		Date date=new Date(); 
 		SimpleDateFormat ft=new SimpleDateFormat("yyyy-MM-dd"); 
@@ -63,15 +62,15 @@ public class SearchBuss extends DriverBase{
 		((JavascriptExecutor)driver).executeScript("$('input[id=datetimepicker]').attr('readonly',false).val('"+ft.format(
 				  date)+"')");
 		//时间
-		searchPageHandle.selectBox_arrow();
-		searchPageHandle.dateTime();
+		searchPage.selectBox_arrow();
+		searchPage.dateTime();
 		//价格
-		searchPageHandle.money();
-		searchPageHandle.howMuch();
+		searchPage.money();
+		searchPage.howMuch();
 		//点击搜索
-		searchPageHandle.hp_search();
+		searchPage.hp_search();
 		//判断是否搜索成功
-		assertEquals(searchPageHandle.view_map(), true);
+		assertEquals(searchPage.view_map(), true);
 		
 	}
 	@DataProvider
