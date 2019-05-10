@@ -7,6 +7,12 @@
 	<parameter name="version" value="73.0.3683.103"></parameter>
 	<parameter name="platform" value="1"></parameter>
 	
+	<test name="test">
+		<classes>
+			<class name="buss.TestBuss"></class>
+		</classes>
+	</test> 
+	
 	<!-- <test name="test_login">
 		<classes>
 			<class name="page.LoginPage"></class>
