@@ -4,13 +4,13 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="438.632">
+           time="153.014">
   <properties />
   
   
-            <testcase name="search" time="105.294" classname="buss.SearchBuss" />
-                <testcase name="search" time="124.193" classname="buss.SearchBuss" />
-                <testcase name="search" time="104.386" classname="buss.SearchBuss" />
-                <testcase name="search" time="104.759" classname="buss.SearchBuss" />
+            <testcase name="search" time="33.813" classname="buss.SearchBuss" />
+                <testcase name="search" time="25.796" classname="buss.SearchBuss" />
+                <testcase name="search" time="40.897" classname="buss.SearchBuss" />
+                <testcase name="search" time="52.508" classname="buss.SearchBuss" />
       
 </testsuite>
