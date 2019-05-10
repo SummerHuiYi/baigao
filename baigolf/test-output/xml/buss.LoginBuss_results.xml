@@ -4,16 +4,16 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="101.490">
+           time="284.879">
   <properties />
   
   
-            <testcase name="login" time="13.468" classname="buss.LoginBuss" />
-                <testcase name="login" time="13.052" classname="buss.LoginBuss" />
-                <testcase name="login" time="14.509" classname="buss.LoginBuss" />
-                <testcase name="login" time="10.835" classname="buss.LoginBuss" />
-                <testcase name="login" time="16.378" classname="buss.LoginBuss" />
-                <testcase name="login" time="15.264" classname="buss.LoginBuss" />
-                <testcase name="login" time="17.984" classname="buss.LoginBuss" />
+            <testcase name="login" time="15.023" classname="buss.LoginBuss" />
+                <testcase name="login" time="20.323" classname="buss.LoginBuss" />
+                <testcase name="login" time="175.261" classname="buss.LoginBuss" />
+                <testcase name="login" time="14.835" classname="buss.LoginBuss" />
+                <testcase name="login" time="21.478" classname="buss.LoginBuss" />
+                <testcase name="login" time="18.868" classname="buss.LoginBuss" />
+                <testcase name="login" time="19.091" classname="buss.LoginBuss" />
       
 </testsuite>
