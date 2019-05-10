@@ -5,6 +5,8 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 //封装了使用方法
@@ -14,6 +16,7 @@ public class BasePage {
 	public BasePage() {}
 	public BasePage(WebDriver driver) {
 		this.driver=driver;
+		PageFactory.initElements(new AjaxElementLocatorFactory(driver, timeOut) , this);
 	}
 
 	public void sendkeys(WebElement element,String value,String className,String functionName,String inputBox) {
@@ -48,9 +51,7 @@ public class BasePage {
 		}catch (Exception e) {
 			ImagesFile.setImage(driver, className, functionName, "没有找到‘"+clickHold+"’控件");
 			Log.error("类："+className+"；功能："+functionName+"；信息：没有找到‘"+clickHold+"’控件");			
-		}
-			
-			
+		}		
 	}
 	//判断是否找到了元素
 	public boolean doesWebElementExist(WebElement element,String className,String functionName,String elementName) {
