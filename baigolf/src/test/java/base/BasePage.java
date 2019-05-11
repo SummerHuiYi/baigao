@@ -11,8 +11,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 //封装了使用方法
 public class BasePage {
-	private WebDriver driver;
-	private final int timeOut=3;
+	protected WebDriver driver;
+	private final int timeOut=10;
 	public BasePage() {}
 	public BasePage(WebDriver driver) {
 		this.driver=driver;

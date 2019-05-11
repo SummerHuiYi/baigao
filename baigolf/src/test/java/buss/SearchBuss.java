@@ -52,7 +52,7 @@ public class SearchBuss extends DriverBase{
 			assertEquals(true, true);
 		}
 		SearchPage searchPage=new SearchPage(driver);
-;		//搜索地区或高尔夫球场
+		//搜索地区或高尔夫球场
 		searchPage.course_search(courseSearch);
 		//日期
 		Date date=new Date(); 
@@ -71,8 +71,15 @@ public class SearchBuss extends DriverBase{
 		searchPage.hp_search();
 		//判断是否搜索成功
 		assertEquals(searchPage.view_map(), true);
+		orderForm(searchPage,map);
 		
 	}
+	
+	public void orderForm(SearchPage searchPage,Map<String,String> map) {
+		String site=map.get("场地");
+		searchPage.site(site);
+	}
+	
 	@DataProvider
 	public Object[][] search_data() {
 		return ExcelUtil.getExcelDate("SearchBuss");

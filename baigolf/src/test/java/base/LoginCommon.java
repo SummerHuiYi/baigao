@@ -17,8 +17,9 @@ public class LoginCommon {
 		loginPage.user(user);
 		loginPage.password(paw);
 		loginPage.blue_btn();
-		//判断登录成功
-		if(loginPage.user_account()&&user.equals(loginPage.getUser_account().getText())) return true;
+
+		//判断登录成功&&user.contains(loginPage.getUser_account().getText())
+		if(loginPage.user_account()) return true;
 		else return false;
 	}	
 }

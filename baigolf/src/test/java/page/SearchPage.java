@@ -1,4 +1,5 @@
 package page;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,7 +20,8 @@ public class SearchPage extends BasePage{
 	private WebElement hp_search;//搜索
 	@FindBy(className="view_map")
 	private WebElement view_map;//查看地图；用于判断是否查询成功
-	
+	//**************************下面element是订单的element
+	private WebElement site;
 	
 	public SearchPage() {}
 	public SearchPage(WebDriver driver) {
@@ -48,4 +50,8 @@ public class SearchPage extends BasePage{
 		return this.doesWebElementExist(view_map,this.toString(),"高尔夫球场_搜索","查看地图");
 	}
 	
+	public void site(String text) {
+		site=driver.findElement(By.linkText(text));
+		this.click(site, this.toString(), "高尔夫球场_订单", text);
+	}
 }
