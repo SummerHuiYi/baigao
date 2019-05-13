@@ -4,9 +4,9 @@
            failures="1"
            errors="0"
            skipped="0"
-           time="65.970">
+           time="31.171">
   <properties />
-            <testcase name="search" time="65.970" classname="buss.SearchBuss">
+            <testcase name="search" time="31.171" classname="buss.SearchBuss">
                 <failure type="java.lang.AssertionError"
                   message="expected [true] but found [false]"
               >
@@ -17,7 +17,8 @@
   org.testng.Assert.assertEquals(Assert.java:116)
   org.testng.Assert.assertEquals(Assert.java:305)
   org.testng.Assert.assertEquals(Assert.java:315)
-  buss.SearchBuss.search(SearchBuss.java:73)
+  buss.SearchBuss.orderForm(SearchBuss.java:158)
+  buss.SearchBuss.search(SearchBuss.java:75)
   sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
   sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)

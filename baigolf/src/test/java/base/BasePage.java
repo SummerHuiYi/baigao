@@ -1,6 +1,7 @@
 package base;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,6 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 //封装了使用方法
 public class BasePage {
@@ -53,6 +55,43 @@ public class BasePage {
 			Log.error("类："+className+"；功能："+functionName+"；信息：没有找到‘"+clickHold+"’控件");			
 		}		
 	}
+	public WebElement elm(By by,String className,String functionName,String elment) {
+		WebElement el=null;
+		try {
+			el=driver.findElement(by);
+			waitExplicit(el);
+			Log.info("类："+className+"；功能："+functionName+"；信息：找到‘"+elment+"’element");
+		}catch (Exception e){
+			ImagesFile.setImage(driver, className, functionName, "没有找到‘"+elment+"’element");
+			Log.error("类："+className+"；功能："+functionName+"；信息：没有找到‘"+elment+"’element");
+		}
+		
+		return el;
+		
+	}
+	public void selectText(WebElement element,String text,String className,String functionName,String sT) {
+		try {
+			waitExplicit(element);
+			Select select =new Select(element);
+			select.deselectByVisibleText(text);
+			Log.info("类："+className+"；功能："+functionName+"；信息：找到‘"+sT+"’下拉栏");
+		}catch (Exception e){
+			ImagesFile.setImage(driver, className, functionName, "没有找到‘"+sT+"’下拉栏");
+			Log.error("类："+className+"；功能："+functionName+"；信息：没有找到‘"+sT+"’下拉栏");
+		}
+	}
+	public void selectIndex(WebElement element,String text,String className,String functionName,String sI) {
+		try {
+			waitExplicit(element);
+			Select select =new Select(element);
+			select.deselectByIndex(Integer.parseInt(text));
+			Log.error("类："+className+"；功能："+functionName+"；信息：找到‘"+sI+"’下拉栏");
+		}catch (Exception e){
+			ImagesFile.setImage(driver, className, functionName, "没有找到‘"+sI+"’下拉栏");
+			Log.error("类："+className+"；功能："+functionName+"；信息：没有找到‘"+sI+"’下拉栏");
+		}
+	}
+	
 	//判断是否找到了元素
 	public boolean doesWebElementExist(WebElement element,String className,String functionName,String elementName) {
 		try {

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM  "http://testng.org/testng-1.0.dtd">
 <suite name="suite_baigolf" thread-count="2" parallel="tests">
-	<parameter name="urlNode" value="http://192.168.43.241:5555/wd/hub"></parameter> 
-	<!-- <parameter name="urlNode" value="http://192.168.100.7:5555/wd/hub"></parameter> -->
+	<!-- <parameter name="urlNode" value="http://192.168.43.241:5555/wd/hub"></parameter>  -->
+	<parameter name="urlNode" value="http://192.168.100.7:5555/wd/hub"></parameter>
 	<!-- <parameter name="urlNode" value="http://192.168.0.107:5555/wd/hub"></parameter> -->
 	<parameter name="browser" value="chrome"></parameter>
 	<parameter name="version" value="73.0.3683.103"></parameter>
@@ -21,8 +21,8 @@
 	</test>   -->
 	
 	<test name="test_search">
-		<parameter name="browser" value="firefox"></parameter>
-		<parameter name="version" value="66.0.3 (64 位)"></parameter>
+		<!-- <parameter name="browser" value="firefox"></parameter>
+		<parameter name="version" value="66.0.3 (64 位)"></parameter> -->
 		<classes>
 			<class name="buss.SearchBuss"></class>
 		</classes>

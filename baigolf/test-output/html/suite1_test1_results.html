@@ -12,7 +12,7 @@
 <body>
 <h1>test_search</h1>
 <p>
-  Test duration: 91.041s
+  Test duration: 36.998s
 </p>
 
 
@@ -28,11 +28,11 @@
                   search
       </td>
   <td class="duration">
-    65.970s
+    31.171s
   </td>
   <td class="result">
         
-          <i>Method arguments: </i><span class="arguments">"1", "https://dev.baigolf.com:9443/baigolf_web/", "用户名:18316871034,密码:asdfgh,搜索地区或高尔夫球场:广州,场地:广州百高富豪球场", ""</span><br />
+          <i>Method arguments: </i><span class="arguments">"1", "https://dev.baigolf.com:9443/baigolf_web/", "用户名:18316871034,密码:asdfgh,搜索地区或高尔夫球场:广州,场地:广州百高富豪球场,具体时段:10,打球人数:3,打球人姓名:张三、李四、王五,联系人:李四,手机号码:15912345678,账号余额:账号余额,支付宝:支付宝", ""</span><br />
     
         
 
@@ -44,7 +44,8 @@
               org.testng.Assert.assertEquals(Assert.java:116)<br />
               org.testng.Assert.assertEquals(Assert.java:305)<br />
               org.testng.Assert.assertEquals(Assert.java:315)<br />
-              buss.SearchBuss.search(SearchBuss.java:73)<br />
+              buss.SearchBuss.orderForm(SearchBuss.java:158)<br />
+              buss.SearchBuss.search(SearchBuss.java:75)<br />
               sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
               sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)<br />
               sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)<br />

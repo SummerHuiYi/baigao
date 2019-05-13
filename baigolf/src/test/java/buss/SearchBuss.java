@@ -5,6 +5,7 @@ import static org.testng.Assert.assertEquals;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
+import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -76,8 +77,85 @@ public class SearchBuss extends DriverBase{
 	}
 	
 	public void orderForm(SearchPage searchPage,Map<String,String> map) {
+		//获取当前窗口
+		String wh1=driver.getWindowHandle();
 		String site=map.get("场地");
+		//点击你订购的场地
 		searchPage.site(site);
+		Set<String> handles=driver.getWindowHandles();
+		//判断是否场地的窗口
+		for(String handle:handles) {
+			if(!wh1.equals(handle)) {
+				driver.switchTo().window(handle);
+				//点击定扣
+				searchPage.book_a();
+			}
+		}
+		//具体时段
+		String pt="";
+		if(map.get("具体时段")!=null) {
+			pt=map.get("具体时段");
+		}
+		searchPage.play_time();
+		//具体时段的值
+		searchPage.play_time_value();
+		//打球人数
+		String pn=null;
+		if(map.get("打球人数")!=null) {
+			pn=map.get("打球人数");
+		}
+		searchPage.player_num(pn);
+		//打球人数的值
+		searchPage.player_num_value(pn);
+		//打球人姓名
+		String pns=null;
+		if(map.get("打球人姓名")!=null) {
+			pns=map.get("打球人姓名");
+		}
+		searchPage.player_names(pns, "、");
+		//联系人
+		String cn=null;
+		if(map.get("联系人")!=null) {
+			cn=map.get("联系人");
+		}
+		searchPage.co_name(cn);
+		//手机号码
+		String cm=null;
+		if(map.get("手机号码")!=null) {
+			cm=map.get("手机号码");
+		}
+		searchPage.co_mobile(cm);
+		//账号余额
+		if(map.get("账号余额")!=null) {
+			searchPage.last_balance();
+		}
+		//支付宝
+		if(map.get("支付宝")!=null) {
+			searchPage.pay_3();
+		}
+		//银联
+		if(map.get("银联")!=null) {
+			searchPage.pay_1();
+		}
+		//visa
+		if(map.get("visa")!=null) {
+			searchPage.pay_7();
+		}
+		//我已阅读
+		searchPage.c_agree();
+		//提交订单
+		searchPage.co_set_order();
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//继续订购
+		searchPage.book();
+		//支付成功
+		boolean order_ok=searchPage.order_ok();
+		assertEquals(order_ok, true);
 	}
 	
 	@DataProvider
@@ -86,6 +164,6 @@ public class SearchBuss extends DriverBase{
 	}
 	@AfterMethod
 	public void quit() {
-		super.quit(SearchBuss.class.getName());
+//		super.quit(SearchBuss.class.getName());
 	}
 }
